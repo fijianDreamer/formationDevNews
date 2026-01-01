@@ -1,0 +1,74 @@
+:root {
+  /*
+   * these CSS variables can be used in place of
+   * inlined values. eg:
+   *
+   * .foo {
+   *   background: rgb(255,102,0);
+   * }
+   * vs:
+   *
+   * .foo {
+   *   background: var(--orange);
+   * }
+   *
+   * Please note variables can be values other than colors:
+   * 
+   */
+
+  --dark-text: #000;
+  --light-text: #828282;
+  --orange: rgb(255, 102, 0);
+  --text-color: #828282;
+  --content-background: #f6f6ef;
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 13px;
+  color: var(--text-color);
+  background-color: var(--content-background);
+}
+
+h1 {
+  font-size: 13px;
+  margin: 6px;
+}
+
+article {
+  margin: 6px;
+}
+
+a {
+  color: inherit;
+}
+
+header {
+  color: var(--dark-text);
+  background: var(--orange);
+
+  /* flexbox (display: flex) allows us to easily vertically center elements */
+  display: flex;
+  align-items: center;
+}
+
+article .article-link:before {
+  /*
+   * use pseudo-elements to inject content before and after the link.
+   * that way, our JavaScript or HTML doesn't need to add parenthesis
+   */
+  content: "(";
+}
+
+article .article-link:after {
+  content: ")";
+}
+
+hr {
+  border-color: var(--orange);
+}
+
+footer {
+  /* text-align doesn't just align text */
+  text-align: center;
+}
